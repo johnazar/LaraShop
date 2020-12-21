@@ -12,12 +12,17 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+       @notifyCss
+     @include('notify::messages')
+        @notifyJs  
+    
 </head>
 <body>
     <div id="app">
@@ -38,7 +43,34 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        @if(Auth::check())
+                      <li class="nav-item">  <a class="nav-link" href="{{route('order')}}">Order</a></li>
+                      @endif
+
+
+
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                   <span class="caret"> Menu </span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    
+                                    @foreach(App\Category::all() as $category)
+                                    <a class="dropdown-item" href="{{route('product.list',[$category->slug])}}">{{$category->name}}
+                                    </a>
+                                    @endforeach
+                                    
+                                </div>
+                            </li>
+                       
                         <!-- Authentication Links -->
+                        <a href="{{route('cart.show')}}" class="nav-link">
+                            <span class="fas fa-shopping-cart">
+                             ({{session()->has('cart')?session()->get('cart')->totalQty:'0'}})
+                            </span>
+                        </a>
+                       
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -49,19 +81,23 @@
                                 </li>
                             @endif
                         @else
+
+
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
