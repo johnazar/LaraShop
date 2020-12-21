@@ -4,10 +4,12 @@
 * `composer require laravel/ui:2.4`
 * `php artisan ui vue --auth`
 * `npm install && npm run dev`
-* create migration files
-* `php artisan migrate`
 * install template into public/admin folder: https://github.com/indrijunanda/RuangAdmin
 * create layouts (views)
+* create migration files
+* `php artisan migrate`
+
+
 * create Routes
 * create Controllers
 * create Models
