@@ -23,6 +23,6 @@
 
 <body id="page-top">
   
-    @notifyCss
+{{--     @notifyCss
      @include('notify::messages')
-        @notifyJs   
+        @notifyJs  --}}  
