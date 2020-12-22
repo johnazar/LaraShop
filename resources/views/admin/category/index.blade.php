@@ -11,12 +11,11 @@
               <li class="breadcrumb-item active" aria-current="page">category Tables</li>
             </ol>
           </div>
-          @if(Session::has('message'))
+{{--           @if(Session::has('message'))
           <div class="alert alert-success">
             {{Session::get('message')}}
           </div>
-  
-        @endif
+          @endif --}}
 
           <div class="row">
             <div class="col-lg-12 mb-4">
