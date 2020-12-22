@@ -16,5 +16,5 @@
 * add notify package https://github.com/mckenziearts/laravel-notify
 extend main
 create MVC: php artisan make:model Category -mcr
-`php artisan storage link`
+`php artisan storage:link`
 composer require mckenziearts/laravel-notify
