@@ -69,7 +69,7 @@ class SubcategoryController extends Controller
      */
     public function edit($id)
     {
-       $subcategory  = Subcategory::find($id);
+       $subcategory  = Subcategory::findOrFail($id);
        return view('admin.subcategory.edit',compact('subcategory'));
 
         
@@ -84,7 +84,7 @@ class SubcategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $subcategory = Subcategory::find($id);
+        $subcategory = Subcategory::findOrFail($id);
         $subcategory->name = $request->name;
         $subcategory->category_id = $request->category;
         $subcategory->save(); 
@@ -100,7 +100,7 @@ class SubcategoryController extends Controller
      */
     public function destroy($id)
     {
-        $subcategory = Subcategory::find($id);
+        $subcategory = Subcategory::findOrFail($id);
         $subcategory->delete();
         notify()->success('Subcategory deleted successfully!');
         return redirect()->route('subcategory.index');
