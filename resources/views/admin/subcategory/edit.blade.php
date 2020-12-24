@@ -37,7 +37,8 @@
                           <option value="">select</option>
                           @foreach(App\Category::all() as $category)
                             <option value="{{$category->id}}"
-                              @if($category->id==$subcategory->category_id)selected
+                              @if($category->id==$subcategory->category_id)
+                              selected
                               @endif
                               >{{$category->name}}</option>
                           @endforeach
