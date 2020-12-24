@@ -74,7 +74,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-       $category = Category::find($id);
+       $category = Category::findOrFail($id);
        return view('admin.category.edit',compact('category'));
     }
 
@@ -87,7 +87,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
         //the old image
         $image = $category->image;
         if($request->hasFile('image')){
@@ -113,7 +113,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
 
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
         $filename = $category->image;
         $category->delete();
         \Storage::delete($filename);
