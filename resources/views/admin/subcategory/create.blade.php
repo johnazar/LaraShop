@@ -22,7 +22,8 @@
                     <div class="form-group"> 
                       <label for="">Name</label>
                       <input type="text" name="name" class="form-control @error('name') is-invalid @enderror " id="" aria-describedby=""
-                        placeholder="Enter name of subcategory">
+                        placeholder="Enter name of subcategory"
+                        value="{{old('name')}}">
                         @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
