@@ -88,8 +88,10 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $category = Category::find($id);
+        //the old image
         $image = $category->image;
         if($request->hasFile('image')){
+            // if user add a new image we delete the old one
             $image = $request->file('image')->store('public/files');
              \Storage::delete($category->image);
            
