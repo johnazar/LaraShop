@@ -13,7 +13,8 @@
     
 
       <div class="col-lg-10">
-        <form action="{{route('subcategory.update',[$subcategory->id])}}" method="POST" >@csrf
+        <form action="{{route('subcategory.update',[$subcategory->id])}}" method="POST" >
+          @csrf
           {{method_field('PUT')}}
               <div class="card mb-6">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
