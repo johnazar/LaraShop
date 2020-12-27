@@ -49,12 +49,12 @@ class ProductController extends Controller
    }
 
    public function edit($id){
-      $product = Product::find($id);
+      $product = Product::findOrFail($id);
       return view('admin.product.edit',compact('product'));
    }
 
    public function update(Request $request,$id){
-      $product = Product::find($id);
+      $product = Product::findOrFail($id);
         $filename = $product->image;
         if($request->file('image')){
             $image = $request->file('image')->store('public/product');
@@ -84,7 +84,7 @@ class ProductController extends Controller
 
 
     public function destroy($id){
-      $product = Product::find($id);
+      $product = Product::findOrFail($id);
       $filename = $product->image;
       $product->delete();
       \Storage::delete($filename);
