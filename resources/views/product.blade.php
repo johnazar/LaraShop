@@ -34,37 +34,29 @@
   <div class="container">
   <h2>Category</h2>
   @foreach(App\Category::all() as $cat)
-      <a href="{{route('product.list',[$cat->slug])}}"> <button class="btn btn-secondary">{{$cat->name}}</button></a>
+      <a href="{{route('product.list',[$cat->slug])}}"><button class="btn btn-secondary">{{$cat->name}}</button></a>
   @endforeach
 
   <div class="album py-5 bg-light">
     <div class="container">
         <h2>Products</h2>
-
-      <div class="row">
-      
-      @foreach($products as $product)
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img src="{{Storage::url($product->image)}}" height="200" style="width: 100%">
-            <div class="card-body">
+        <div class="row">
+          @foreach($products as $product)
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img src="{{Storage::url($product->image)}}" height="200" style="width: 100%">
+              <div class="card-body">
                 <p><b>{{$product->name}}</b></p>
-              <p class="card-text">
+                <p class="card-text">
                   {{(Str::limit($product->description,120))}}
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                 <a href="{{route('product.view',[$product->id])}}"> <button type="button" class="btn btn-sm btn-outline-success">View</button>
-                </a>
-                
-                <a class="addToCart" id="{{$product->id}}">
-
-                    <button type="button" class="btn btn-sm btn-outline-primary">{{$product->id}}sAdd to cart
-                    </button>
-
-                </a>
-                
-                </div>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="{{route('product.view',[$product->id])}}" class="btn btn-sm btn-outline-success">View
+                    </a>
+                    <a class="addToCart" id="{{$product->id}}" class="btn btn-sm btn-outline-primary">{{$product->id}}sAdd to cart
+                    </a>
+                  </div>
                 <small class="text-muted">${{$product->price}}</small>
               </div>
             </div>
@@ -77,38 +69,33 @@
       <a href="{{route('more.product')}}"><button class="btn btn-success">More Product</button>
       </a>
     </center>
-  
-    
-   
-    </div>
+  </div>
 
   <div class="jumbotron">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="row">
-        @foreach($randomActiveProducts as $product)
-        <div class="col-4">
-                    <div class="card mb-4 shadow-sm">
-            <img src="{{Storage::url($product->image)}}" height="200" style="width: 100%">
-            <div class="card-body">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            @foreach($randomActiveProducts as $product)
+            <div class="col-4">
+              <div class="card mb-4 shadow-sm">
+                <img src="{{Storage::url($product->image)}}" height="200" style="width: 100%">
+                <div class="card-body">
                 <p><b>{{$product->name}}</b></p>
-              <p class="card-text">
+                <p class="card-text">
                   {{(Str::limit($product->description,120))}}
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-success">View</button>
-            <a href="">
-            <a href="{{route('add.cart',[$product->id])}}">  <button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button></a>
-            </a>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-success">View</button>
+                      <a href="{{route('add.cart',[$product->id])}}"><button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button></a>
+                  </div>
+                  <small class="text-muted">${{$product->price}}</small>
                 </div>
-                <small class="text-muted">${{$product->price}}</small>
               </div>
             </div>
           </div>
-        </div>
-        @endforeach
+          @endforeach
         
       </div>
     </div>
@@ -136,11 +123,8 @@
           </div>
         </div>
         @endforeach
-       
       </div>
     </div>
-    
-   
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -163,8 +147,6 @@
     <p class="float-right">
       <a href="#">Back to top</a>
     </p>
-    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.4/getting-started/introduction/">getting started guide</a>.</p>
   </div>
 </footer>
 </div>
@@ -191,8 +173,6 @@
             }
           });
      })
-
-
-    });
+     });
 </script>
 @endsection
