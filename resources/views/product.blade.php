@@ -16,9 +16,6 @@
     </div>
     @endforeach
     @endif
-
-    
-
   </div>
   <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
