@@ -104,8 +104,6 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Order </h6>
             {{-- <a class="collapse-item" href="{{route('order.index')}}">View</a> --}}
-           
-           
           </div>
         </div>
       </li>
