@@ -15,12 +15,11 @@ class FrontProductListController extends Controller
     	$randomActiveProductIds=[];
     	foreach($randomActiveProducts as $product){
     		array_push($randomActiveProductIds,$product->id);
-    	}
+        }
+        //return random items which are not displayed up
     	$randomItemProducts = Product::whereNotIn('id',$randomActiveProductIds)->limit(3)->get();
         $sliders = Slider::get();
-
-      
-    	return view('product',compact('products','randomItemProducts','randomActiveProducts','sliders'));
+        return view('product',compact('products','randomItemProducts','randomActiveProducts','sliders'));
     }
 
     public function show($id){
