@@ -24,6 +24,7 @@ class FrontProductListController extends Controller
 
     public function show($id){
         $product = Product::find($id);
+        // get other products from the same category
         $productFromSameCategories = Product::inRandomOrder()
             ->where('category_id',$product->category_id)
             ->where('id','!=',$product->id)

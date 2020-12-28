@@ -105,14 +105,13 @@
             <img src="{{Storage::url($product->image)}}" height="200" style="width: 100%">
             <div class="card-body">
                 <p><b>{{$product->name}}</b></p>
-              <p class="card-text">
+                <p class="card-text">
                   {{(Str::limit($product->description,120))}}
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                <a href="{{route('product.view',[$product->id])}}">  <button type="button" class="btn btn-sm btn-outline-success">View</button></a>
-                 <a href="{{route('add.cart',[$product->id])}}"> 
-                <button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button></a>
+                <a href="{{route('product.view',[$product->id])}}"><button type="button" class="btn btn-sm btn-outline-success">View</button></a>
+                <a href="{{route('add.cart',[$product->id])}}"><button type="button" class="btn btn-sm btn-outline-primary">Add to cart</button></a>
                 </div>
                 <small class="text-muted">${{$product->price}}</small>
               </div>
