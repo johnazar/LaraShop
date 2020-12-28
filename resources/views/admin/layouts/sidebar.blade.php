@@ -88,7 +88,7 @@
         <div id="collapseBootstrap4" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Users </h6>
-           {{--  <a class="collapse-item" href="{{route('user.index')}}">View all users</a> --}}
+            <a class="collapse-item" href="{{route('user.index')}}">View all users</a>
             
            
           </div>

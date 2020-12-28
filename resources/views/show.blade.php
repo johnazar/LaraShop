@@ -31,6 +31,7 @@
       </aside>
     </div>
   </div>
+  <!-- Products From Same Categories .// -->
   @if(count($productFromSameCategories)>0)
   <div class="jumbotron">
     <h3>You may like </h3>

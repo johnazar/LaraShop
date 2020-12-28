@@ -39,12 +39,9 @@
         </form>
        <hr>
        <a href="{{route('product.list',[$slug])}}">Back</a>
+      </div>
 
       
-
-
-
-        </div>
       <div class="col-md-10">
         <div class="row">
       <!--foreach products-->
