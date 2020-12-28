@@ -11,16 +11,14 @@
              <form action="{{route('product.list',[$slug])}}" method="GET">
             <!--foreach subcategories-->
             @foreach($subcategories as $subcategory)
-           
               <p><input type="checkbox" name="subcategory[]"
-               value="{{$subcategory->id}}"
-               @if(isset($filterSubCategories))
-                {{in_array($subcategory->id,$filterSubCategories)?'checked ="checked" ':''}}
-               @endif
-
-               >{{$subcategory->name}}</p>
-           <!--end foreach-->
-           @endforeach
+              value="{{$subcategory->id}}"
+              @if(isset($filterSubCategories))
+               {{in_array($subcategory->id,$filterSubCategories)?'checked ="checked" ':''}}
+              @endif
+              >{{$subcategory->name}}</p>
+              <!--end foreach-->
+            @endforeach
           <input type="submit" value="Filter" class="btn btn-secondary">
          </form>
          <hr>
@@ -41,7 +39,7 @@
        <a href="{{route('product.list',[$slug])}}">Back</a>
       </div>
 
-      
+
       <div class="col-md-10">
         <div class="row">
       <!--foreach products-->
