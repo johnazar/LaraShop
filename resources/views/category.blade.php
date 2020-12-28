@@ -22,8 +22,8 @@
           <input type="submit" value="Filter" class="btn btn-secondary">
          </form>
          <hr>
-         <h3>Filter by price</h3>
 
+         <h3>Filter by price</h3>
          <form  action="{{route('product.list',[$slug])}}" method="GET">
              <input type="text" name="min" class="form-control" placeholder="minimum price" required="">
             <br>
@@ -36,7 +36,7 @@
 
         </form>
        <hr>
-       <a href="{{route('product.list',[$slug])}}">Back</a>
+       <a href="{{route('product.list',[$slug])}}">Rest Filter</a>
       </div>
 
 
