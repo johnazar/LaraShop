@@ -56,11 +56,10 @@ class CartController extends Controller
     		session()->forget('cart');
     	}else{
     		session()->put('cart',$cart);
-    		
-
+    
     	}
-    	notify()->success(' Cart updated!');
-            return redirect()->back();
+    	notify()->success('Cart updated!');
+        return redirect()->back();
     }
 
     public function checkout($amount){
