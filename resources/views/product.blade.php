@@ -96,6 +96,8 @@
         
       </div>
     </div>
+
+    {{-- slider --}}
     <div class="carousel-item ">
       <div class="row">
         @foreach($randomItemProducts as $product)
