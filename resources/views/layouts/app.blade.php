@@ -67,6 +67,7 @@
                         <!-- Authentication Links -->
                         <a href="{{route('cart.show')}}" class="nav-link">
                             <span class="fas fa-shopping-cart">
+                                <!-- Display Qty -->
                              ({{session()->has('cart')?session()->get('cart')->totalQty:'0'}})
                             </span>
                         </a>
