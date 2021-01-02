@@ -24,10 +24,9 @@
   </thead>
   <tbody>
 
-    @if($cart)
+  @if($cart)
   @php $i=1 @endphp
-
-@foreach($cart->items as $product)
+  @foreach($cart->items as $product)
     <tr>
       <th scope="row">{{$i++}}</th>
       

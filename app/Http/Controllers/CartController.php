@@ -44,7 +44,7 @@ class CartController extends Controller
     	$cart  = new Cart(session()->get('cart'));
     	$cart->updateQty($product->id,$request->qty);
     	session()->put('cart',$cart);
-    	notify()->success(' Cart updated!');
+    	notify()->success('Cart updated!');
         return redirect()->back();
 
     }

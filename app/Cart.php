@@ -43,6 +43,7 @@ class Cart{
 	}
 
 	public function updateQty($id,$qty){
+		//remove the item with old qty
 		$this->totalQty-=$this->items[$id]['qty'];
 		$this->totalPrice-=$this->items[$id]['price']*$this->items[$id]['qty'];
 		//add the item with new qty
