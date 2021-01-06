@@ -63,9 +63,11 @@ class CartController extends Controller
     }
 
     public function checkout($amount){
+        // need to refine
         if(session()->has('cart')){
             $cart = new Cart(session()->get('cart'));
         }else{
+            // must not countine to checkout if there is no cart
             $cart = null;
         }  
         return view('checkout',compact('amount','cart'));
@@ -91,10 +93,8 @@ class CartController extends Controller
 
         if($chargeId){
             auth()->user()->orders()->create([
-
                 'cart'=>serialize(session()->get('cart'))
-            ]);
-
+                ]);
             session()->forget('cart');
             notify()->success(' Transaction completed!');
             return redirect()->to('/');
