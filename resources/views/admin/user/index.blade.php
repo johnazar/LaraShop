@@ -26,31 +26,21 @@
                         <th>SN</th>
                         <th>Name</th>
                         <th>Email</th>
-                        
                       </tr>
                     </thead>
                     <tbody>
                       @if(count($users)>0)
                       @foreach($users as $key=> $user)
                       <tr>
-
                         <td><a href="#">{{$key+1}}</a></td>
-                       
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        
-                        
-                        
                       </tr>
                       @endforeach
-
                       @else
                       <td>No users to display</td>
                       @endif
-                      
-                      
-                      
-                    </tbody>
+                   </tbody>
                   </table>
                 </div>
                 <div class="card-footer"></div>
@@ -59,5 +49,4 @@
           </div>
           <!--Row-->
         </div>
-
   @endsection
