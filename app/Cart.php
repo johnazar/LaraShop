@@ -27,7 +27,6 @@ class Cart{
 			'price'=>$product->price,
 			'qty'=>0,
 			'image'=>$product->image
-
 		];
 		// check if the product is in the cart already
 		if(!array_key_exists($product->id,$this->items)){

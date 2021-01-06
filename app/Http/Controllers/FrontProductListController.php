@@ -86,12 +86,11 @@ class FrontProductListController extends Controller
             $products = Product::where('name','like','%'.$request->search.'%')
             ->orWhere('description','like','%'.$request->search.'%')
             ->orWhere('additional_info','like','%'.$request->search.'%')
-
             ->paginate(50);
-            return view('all-product',compact('products'));
-        }
+        }else{
+            $products  =Product::latest()->paginate(50);
 
-        $products  =Product::latest()->paginate(50);
+        }     
         return view('all-product',compact('products'));
        
     }
