@@ -107,9 +107,9 @@ class CartController extends Controller
     //for loggedin user
     public function order(){
         $orders = auth()->user()->orders;
+        //https://laravel.com/docs/8.x/collections#method-transform
         $carts =$orders->transform(function($cart,$key){
             return unserialize($cart->cart);
-
         });
         return view('order',compact('carts'));
 
